@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.removerAP {
+  background:url("../images/delete.png");
+ width: 16px;
+    height: 16px;
+	}
+	
+	.input{
+		
+		box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+	}
+	
+	.td{
+		padding:5px;
+	}
+.tabelaEditavel {
+    border:solid 1px;
+    width:100%
+}
+ 
+.tabelaEditavel td {
+    border:solid 1px;
+}
+ 
+.tabelaEditavel .celulaEmEdicao {
+    padding: 0;
+}
+ 
+.tabelaEditavel .celulaEmEdicao input[type=text]{
+    width:100%;
+    border:0;
+    background-color:rgb(255,253,210);  
+}
+
+.fotoMini{
+	margin-right:20px;
+	width:80px;
+}
+.td22{
+	       vertical-align: inherit;
+}
+
+
+.botao{
+	width:60px;
+}
+
+.pagina{
+
+  background: url(../../src/images/login.jpg) no-repeat center top fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.celulaFHD{
+	text-align: center;
+}
+
+.td1{
+	width:10%;
+	    max-width: 10%;
+}
+.td2{
+	width:25%
+}
+
+.td3{
+	width:40%
+}
+.input{
+	width:100%
+}
