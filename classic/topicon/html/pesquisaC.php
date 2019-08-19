@@ -11,7 +11,36 @@
                 <button type="button" class="input-search-close icon wb-close" aria-label="Close"></button>
               </div>
             </form>
-         
+         <div><center><button id="btnAdicionarAN" onclick="exibeFiltros()" type="button" class="site-action-toggle btn-raised btn btn-success btn-floating" 
+				style="margin-top: 20px;
+				width: 40px;
+				height: 40px;background-color:#6495ed; border-color:#6495ed">
+        <i class="front-icon wb-plus animation-scale-up" aria-hidden="true"></i>
+      </button></center></div>
+	  <div id="filtros" style="padding-top:50px; ">
+	   <div class="row" >
+                        <div class="form-group col-md-4">
+                          <label class="form-control-label" for="inputBasicFirstName">Especialidade</label>
+                          <input type="text" class="form-control col-md-10" id="especialidade" name="especialidade"
+                            autocomplete="off" />
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label class="form-control-label" for="inputBasicLastName">Pelotão</label>
+                          <input type="text" class="form-control " id="pelotao" name="pelotao"
+                            autocomplete="off" />
+                        </div>
+						 <div class="form-group col-md-2">
+                          <label class="form-control-label" for="inputBasicLastName">CIA</label>
+                          <input type="text" class="form-control" id="cia" name="cia"
+                           autocomplete="off" />
+                        </div>
+						<div class="form-group col-md-4">
+                          <label class="form-control-label" for="inputBasicLastName">Turma</label>
+                          <input type="text" class="form-control col-md-10" id="turma" name="turma"
+                           autocomplete="off" />
+                        </div>
+                      </div>
+	  </div>
             <nav>
               <ul data-plugin="paginator" data-total="50" data-skin="pagination-no-border"></ul>
             </nav>

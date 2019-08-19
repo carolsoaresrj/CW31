@@ -12,22 +12,34 @@ $query= "select ID, NOME, NOME_GUERRA, FOTO FROM TB_ALUNO WHERE NOME LIKE '%".$v
 $sql =  mysqli_query($conn, $query);
 
 // Exibe todos os valores encontrados
-
+if($valor<>""){
 echo("  <table class=\"table is-indent\" data-plugin=\"animateList\" data-animate=\"fade\" data-child=\"tr\"
             data-selectable=\"selectable\">
             <thead>
               <tr>
                 <th class=\"pre-cell\"></th>
-                <th class=\"cell-30\" scope=\"col\">
+                <!--<th class=\"cell-30\" scope=\"col\">
                 
-                </th>
-                <th class=\"cell-300\" scope=\"col\">Aluno(s)</th>
-               
+                </th> -->
+             <th class=\"cell-300\" style=\"text-align: center;\" scope=\"col\">Aluno(s)</th>     
+				<th>  
+							<a style=\"
+									float: right; \"
+                                  href=\"\"> <img src=\"images/Excel-icon.png\" alt=\"Excel\" width=32 height=32>
+								  
+							</a>
+                              
+							<a style=\"
+									float: right;padding-right:20px;\"
+                                  href=\"\"> <img src=\"images/Adobe-PDF-Document-icon.png\" alt=\"Excel\" width=32 height=32>
+								  
+							</a>
+                              </th>
               </tr>
             </thead>
             <tbody>");
 			
-		if($valor<>""){
+		
 while ($alunos = mysqli_fetch_object($sql)) {
 	 //print_r($alunos->FOTO);
 //	echo "<a href=\"javascript:func()\" onclick=\"exibirConteudo('".$alunos->ID."')\">" . $alunos->NOME . "</a><br />";
@@ -63,7 +75,7 @@ while ($alunos = mysqli_fetch_object($sql)) {
                  <td class=\"cell-30\">
                   
                 </td>
-                  <td style=\"width:40%\">
+                  <td style=\"width:40%\ colspan=\"3\">
                    <a href=\"fhd.php?id=$alunos->ID\" > 
                  <img class=\"img-fluid fotoMini\" src=\"$alunos->FOTO\" alt=\"...\">
                     </a>
@@ -71,7 +83,7 @@ while ($alunos = mysqli_fetch_object($sql)) {
 					 . $alunos->NOME .
                 "  </td>
                 <!-- <td style=\"vertical-align: inherit;\" class=\"\" >3º Pelotão 2ª cia</td>-->
-                  <td class=\"suf-cell\"></td>
+                  <td class=\"suf-cell\" style=\"vertical-align: middle;\"><i class=\"icon wb-edit\" aria-hidden=\"true\" style=\"    padding-left: 50%; font-size: 24px; vertical-align: middle;\"></i></td>
                </tr>
 			   ");
 			}

@@ -141,7 +141,7 @@
                 </a>
                 <ul class="site-menu-sub">
                   <li class="site-menu-item">
-                    <a class="animsition-link" href="pesquisa.php">
+                    <a class="animsition-link" href="pagina.php?id=pesquisa">
                       <span class="site-menu-title">Pesquisar Aluno</span>
                     </a>
                   </li>

@@ -57,7 +57,7 @@ else
 	*/
 
 
-					header('Location: /CW31/classic/topicon/html/telaInicial.php');
+					header('Location: /CW31/classic/topicon/html/pagina.php?id=inicio');
 			
 				 
 /*}
