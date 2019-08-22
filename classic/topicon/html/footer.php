@@ -1,7 +1,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="site-footer-legal">© 2019 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">CW31</a></div>
+      <div class="site-footer-legal">© 2019 <a>CW31</a></div>
       
     </footer>
     <!-- Core  -->
@@ -56,3 +56,6 @@
     
   </body>
 </html>
+<?php
+ob_end_flush();
+?>

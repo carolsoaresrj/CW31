@@ -1,7 +1,9 @@
-﻿
+
 <html class="no-js css-menubar" lang="en">
   <head >
-  
+  <?php  if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+  session_start();
+}  ?>
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -157,7 +159,7 @@
                 </a>
                 <ul class="site-menu-sub">
                   <li class="site-menu-item">
-                    <a class="animsition-link" href="cadastroAluno.php">
+                    <a class="animsition-link" href="cadastroAluno.php?id=0">
                       <span class="site-menu-title">Cadastrar</span>
                     </a>
                   </li>
@@ -189,3 +191,4 @@
         </div>
       </div>
     </div>
+	

@@ -173,3 +173,68 @@ function exibeFiltros(){
             document.getElementById("filtros").style.display = 'none';
     
 }
+ function makeDate(elemento){
+	obj = document.getElementById(elemento.id);
+vl = obj.value;
+l = vl.toString().length;
+switch(l){
+case 2:
+obj.value = vl + "/";
+break;
+case 5:
+obj.value = vl + "/";
+break;
+}
+}
+
+function editarAluno(){
+	
+	$('#nome').removeAttr('disabled');
+	
+	$('#foto').removeAttr('disabled');
+
+$('#nome_guerra').removeAttr('disabled');
+$('#nip').removeAttr('disabled');
+$('#posto').removeAttr('disabled');
+$('#quadro').removeAttr('disabled');
+$('#sexo').removeAttr('disabled');
+$('#curso').removeAttr('disabled');
+$('#dt_aps').removeAttr('disabled');
+$('#especialidade').removeAttr('disabled');
+
+$('#cia').removeAttr('disabled');
+$('#pelotao').removeAttr('disabled');
+$('#turma').removeAttr('disabled');
+$('#cama').removeAttr('disabled');
+$('#armario').removeAttr('disabled');
+$('#alojamento').removeAttr('disabled');
+
+$('#cpf').removeAttr('disabled');
+$('#rg').removeAttr('disabled');
+$('#id_militar').removeAttr('disabled');
+$('#cep').removeAttr('disabled');
+$('#rua').removeAttr('disabled');
+$('#numero').removeAttr('disabled');
+$('#complemento').removeAttr('disabled');
+$('#bairro').removeAttr('disabled');
+$('#cidade').removeAttr('disabled');
+$('#estado').removeAttr('disabled');
+
+
+$('#inputCFO').removeAttr('disabled');
+$('#inputSMV').removeAttr('disabled');
+$('#inputSMO').removeAttr('disabled');
+$('#inputMasculino').removeAttr('disabled');
+$('#inputFeminino').removeAttr('disabled');
+
+$('#btnEditar').val('Salvar');
+$("#btnEditar").attr("onclick", "enviaForm();");
+
+
+}
+
+function enviaForm(){
+	$("#form").submit();
+	}
+
+

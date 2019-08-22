@@ -3,7 +3,7 @@ $(function(){
 		var linhas= $("#tblAnotacoesPositivas tr").length-2;
 		$("#tblAnotacoesPositivas tbody").append(
 			"<tr style=\"height:20px\">"+
-			"<td class=\"td\" ><input class=\"input novaAP\" style=\"width:100%;text-align:center\" name=\"ap" +linhas+"1\" id=\"ap" +linhas+"1\" onchange=\"inputEditado(ap" +linhas + "1)\"/></td>"+
+			"<td class=\"td\" ><input class=\"input novaAP\" style=\"width:100%;text-align:center\" name=\"ap" +linhas+"1\" id=\"ap" +linhas+"1\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(ap" +linhas + "1)\"/></td>"+
 			"<td class=\"td\" ><input class=\"input novaAP\" style=\"width:100%;text-align:center\"name=\"ap" +linhas+"2\" id=\"ap" +linhas+"2\" onchange=\"inputEditado(ap" +linhas + "2)\"/></td>"+
 			"<td  class=\"td\" style=\"width:90%\" \"><input class=\"input novaAP\" style=\"width:100%;text-align:center\" name=\"ap" +linhas+"3\" id=\"ap" +linhas+"3\" onchange=\"inputEditado(ap" +linhas + "3)\"/></td>"+
 			"<td><img  class='removerAP btnExcluir'/><input type=\"hidden\" name=\"acao_ap" +linhas+"\" id=\"acao_ap" +linhas+"\" value=\"\"/><input type=\"hidden\" name=\"tipo_ap" +linhas+"\" id=\"tipo_ap" +linhas+"\" value=\"P\"/><input type=\"hidden\" name=\"id_anotacao_ap"+linhas+"\" value=\"\"/></td>"+
@@ -18,7 +18,7 @@ $(function(){
 		var linhas= $("#tblAnotacoesNegativas tr").length-2;
 		$("#tblAnotacoesNegativas tbody").append(
 			"<tr style=\"height:20px\">"+
-			"<td class=\"td\" ><input class=\"input novaAN\" style=\"width:100%;text-align:center\" name=\"an" +linhas+"1\" id=\"an" +linhas+"1\" onchange=\"inputEditado(an" +linhas + "1)\"/></td>"+
+			"<td class=\"td\" ><input class=\"input novaAN\" style=\"width:100%;text-align:center\" name=\"an" +linhas+"1\" id=\"an" +linhas+"1\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(an" +linhas + "1)\"/></td>"+
 			"<td class=\"td\" ><input class=\"input novaAN\" style=\"width:100%;text-align:center\"name=\"an" +linhas+"2\" id=\"an" +linhas+"2\" onchange=\"inputEditado(an" +linhas + "2)\"/></td>"+
 			"<td  class=\"td\" style=\"width:90%\" \"><input class=\"input novaAN\" style=\"width:100%;text-align:center\" name=\"an" +linhas+"3\" id=\"an" +linhas+"3\" onchange=\"inputEditado(an" +linhas + "3)\"/></td>"+
 			"<td><img  class='removerAP btnExcluir'/><input type=\"hidden\" name=\"acao_an" +linhas+"\" id=\"acao_an" +linhas+"\" value=\"\"/><input type=\"hidden\" name=\"tipo_an" +linhas+"\" id=\"tipo_an" +linhas+"\" value=\"N\"/><input type=\"hidden\" name=\"id_anotacao_an"+linhas+"\" value=\"\"/></td>"+
@@ -32,7 +32,7 @@ $(function(){
 		var linhas= $("#tblObservacoes tr").length-2;
 		$("#tblObservacoes tbody").append(
 			"<tr style=\"height:20px\">"+
-			"<td class=\"td\" ><input class=\"input novaAO\" style=\"width:100%;text-align:center\" name=\"ao" +linhas+"1\" id=\"ao" +linhas+"1\" onchange=\"inputEditado(ao" +linhas + "1)\"/></td>"+
+			"<td class=\"td\" ><input class=\"input novaAO\" style=\"width:100%;text-align:center\" name=\"ao" +linhas+"1\" id=\"ao" +linhas+"1\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(ao" +linhas + "1)\"/></td>"+
 			"<td  class=\"td\" ><input class=\"input novaAO\" style=\"width:100%;text-align:center\" name=\"ao" +linhas+"3\" id=\"ao" +linhas+"3\" onchange=\"inputEditado(ao" +linhas + "3)\"/></td>"+
 			"<td><img  class='removerAP btnExcluir'/><input type=\"hidden\" name=\"acao_ao" +linhas+"\" id=\"acao_ao" +linhas+"\" value=\"\"/><input type=\"hidden\" name=\"tipo_ao" +linhas+"\" id=\"tipo_ao" +linhas+"\" value=\"O\"/><input type=\"hidden\" name=\"id_anotacao_ao"+linhas+"\" value=\"\"/><input type=\"hidden\" name=\"ao02\" id=\"ao02\"/></td>"+
 			"</tr>");
@@ -105,6 +105,7 @@ $(function(){
 	
 	//$("ap01")onchange = "myFunction()"
 //});
+
 
   
 

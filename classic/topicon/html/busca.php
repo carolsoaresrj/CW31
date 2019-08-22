@@ -6,7 +6,7 @@ require_once("../config/config.php");
 // Recebe o valor enviado
 $valor = $_GET['valor'];
 
-$query= "select ID, NOME, NOME_GUERRA, FOTO FROM TB_ALUNO WHERE NOME LIKE '%".$valor."%'";
+$query= "select ID, NOME, NOME_GUERRA, FOTO_IMG FROM TB_ALUNO WHERE NOME LIKE '%".$valor."%'";
  
 // Procura alunos no banco relacionados ao valor
 $sql =  mysqli_query($conn, $query);
@@ -68,7 +68,7 @@ while ($alunos = mysqli_fetch_object($sql)) {
 
             }
 			if($verificacao==1){
-				
+				//print_r($alunos);
 		  
 				  echo (" <tr style=\"height:60px\" data-url=\"panel.tpl\" data-toggle=\"slidePanel\" >
                  <!-- <td class=\"pre-cell\"></td> -->
@@ -76,14 +76,18 @@ while ($alunos = mysqli_fetch_object($sql)) {
                   
                 </td>
                   <td style=\"width:40%\ colspan=\"3\">
-                   <a href=\"fhd.php?id=$alunos->ID\" > 
-                 <img class=\"img-fluid fotoMini\" src=\"$alunos->FOTO\" alt=\"...\">
+                   <a href=\"fhd.php?id=$alunos->ID\" > ");
+				   
+				   
+				   if($alunos->FOTO_IMG!=""){
+				 echo ("  <img class=\"img-fluid fotoMini\"  src=\"data:image/png;base64,".base64_encode($alunos->FOTO_IMG)."\">"); }
+                    echo ("</a>
                     </a>
                     <!--<b>AMANDA</b> PAIVA DE <b>ARAUJO</b>-->"
 					 . $alunos->NOME .
                 "  </td>
                 <!-- <td style=\"vertical-align: inherit;\" class=\"\" >3º Pelotão 2ª cia</td>-->
-                  <td class=\"suf-cell\" style=\"vertical-align: middle;\"><i class=\"icon wb-edit\" aria-hidden=\"true\" style=\"    padding-left: 50%; font-size: 24px; vertical-align: middle;\"></i></td>
+                  <td class=\"suf-cell\" style=\"vertical-align: middle;\">  <a href=\"cadastroAluno.php?id=$alunos->ID\"><i class=\"icon wb-edit\" aria-hidden=\"true\" style=\"    padding-left: 50%; font-size: 24px; vertical-align: middle;\" ></i></a></td>
                </tr>
 			   ");
 			}

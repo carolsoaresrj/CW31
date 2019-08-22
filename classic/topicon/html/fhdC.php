@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Incluir aquivo de conexão
 require_once("../config/config.php");
@@ -48,7 +48,7 @@ while ($anotacaoP = mysqli_fetch_object($sqlAnotacoesP)) {
 	array_push($anotacoesP, array('id' => $anotacaoP->ID, 'anotacao' =>  $anotacaoP->ANOTACAO, 'oficial' =>  $anotacaoP->OFICIAL, 'data' =>  $anotacaoP->DATA, 'tipo' =>  $anotacaoP->TIPO));
 
 	$htmlAnotacoes.="<tr >
-				<td class=\"td\" ><input name=\"ap". $i . "1\" id=\"ap". $i . "1\" class=\"input existenteAP\" onchange=\"inputEditado(ap" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesP[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"ap". $i . "1\" id=\"ap". $i . "1\" class=\"input existenteAP\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(ap" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesP[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td class=\"td\" ><input name=\"ap". $i . "2\" class=\"input existenteAP\"onchange=\"inputEditado(ap" . $i . "2)\"  value=\"".$anotacoesP[$i]["oficial"]. "\" style=\"width:100%; text-align:center\"/></td>
 				
@@ -61,7 +61,7 @@ while ($anotacaoP = mysqli_fetch_object($sqlAnotacoesP)) {
 else{	
 
 	$htmlAnotacoes.="<tr >
-				<td class=\"td\" ><input name=\"ap01\" class=\"input novaAP\" onchange=\"inputEditado(ap01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"ap01\" class=\"input novaAP\" onkeyup=\"makeDate(this)\" onchange=\"inputEditado(ap01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td class=\"td\" ><input name=\"ap02\" class=\"input novaAP\" onchange=\"inputEditado(ap02)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
@@ -80,7 +80,7 @@ while ($anotacaoN = mysqli_fetch_object($sqlAnotacoesN)) {
 	array_push($anotacoesN, array('id' => $anotacaoN->ID, 'anotacao' =>  $anotacaoN->ANOTACAO, 'oficial' =>  $anotacaoN->OFICIAL, 'data' =>  $anotacaoN->DATA, 'tipo' =>  $anotacaoN->TIPO));
 
 	$htmlAnotacoesN.="<tr >
-				<td class=\"td\" ><input name=\"an". $i . "1\" id=\"an". $i . "1\" class=\"input existenteAN\" onchange=\"inputEditado(an" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesN[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"an". $i . "1\" id=\"an". $i . "1\" class=\"input existenteAN\" onkeyup=\"makeDate(this)\" onchange=\"inputEditado(an" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesN[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td class=\"td\" ><input name=\"an". $i . "2\" class=\"input existenteAN\"onchange=\"inputEditado(an" . $i . "2)\"  value=\"".$anotacoesN[$i]["oficial"]. "\" style=\"width:100%; text-align:center\"/></td>
 				
@@ -93,7 +93,7 @@ while ($anotacaoN = mysqli_fetch_object($sqlAnotacoesN)) {
 else{	
 
 	$htmlAnotacoesN.="<tr >
-				<td class=\"td\" ><input name=\"an01\" class=\"input novaAN\" onchange=\"inputEditado(an01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"an01\" class=\"input novaAN\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(an01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td class=\"td\" ><input name=\"an02\" class=\"input novaAN\" onchange=\"inputEditado(an02)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
@@ -113,7 +113,7 @@ while ($anotacaoO = mysqli_fetch_object($sqlAnotacoesO)) {
 	array_push($anotacoesO, array('id' => $anotacaoO->ID, 'anotacao' =>  $anotacaoO->ANOTACAO, 'data' =>  $anotacaoO->DATA, 'tipo' =>  $anotacaoO->TIPO));
 
 	$htmlAnotacoesO.="<tr >
-				<td class=\"td\" ><input name=\"ao". $i . "1\" id=\"ao". $i . "1\" class=\"input existenteAO\" onchange=\"inputEditado(ao" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesO[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"ao". $i . "1\" id=\"ao". $i . "1\" class=\"input existenteAO\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(ao" . $i . "1)\" value=\"" . date('d/m/Y',strtotime(($anotacoesO[$i]["data"]))).  "\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td   class=\"td\" ><input class=\"input existenteAO \" name=\"ao". $i . "3\" onchange=\"inputEditado(ao" . $i . "3)\"  value=\"" .  $anotacoesO[$i]["anotacao"]. "\" style=\"width:100%; text-align:center\"/></td>
 				
@@ -125,7 +125,7 @@ while ($anotacaoO = mysqli_fetch_object($sqlAnotacoesO)) {
 else{	
 
 	$htmlAnotacoesO.="<tr >
-				<td class=\"td\" ><input name=\"ao01\" class=\"input novaAO\" onchange=\"inputEditado(ao01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
+				<td class=\"td\" ><input name=\"ao01\" class=\"input novaAO\" onkeyup=\"makeDate(this)\"  onchange=\"inputEditado(ao01)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
 				<td class=\"td\" ><input name=\"ao03\" class=\"input novaAO\" onchange=\"inputEditado(ao03)\"  value=\"\" style=\"width:100%; text-align:center\"/></td>
 				
